@@ -35,6 +35,14 @@ def register():
         segmented_button_callback("Регистрация")
         CTkMessagebox(title="Error", message="Такой логин уже существует")
         return
+    if entry_login_register.get() == "" or entry_password_register.get() == "":
+        segmented_button_callback("Регистрация")
+        CTkMessagebox(title="Error", message="Заполните все поля")
+        return
+    if len(entry_password_register.get()) < 6:
+        segmented_button_callback("Регистрация")
+        CTkMessagebox(title="Error", message="Пароль должен быть не менее 6 символов")
+        return
     db_insert(entry_login_register.get(), entry_password_register.get())
     entry_login_register.delete(0, "end")
     entry_password_register.delete(0, "end")

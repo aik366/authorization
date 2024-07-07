@@ -36,8 +36,15 @@ def register():
         CTkMessagebox(title="Error", message="Такой логин уже существует")
         return
     db_insert(entry_login_register.get(), entry_password_register.get())
+    entry_login_register.delete(0, "end")
+    entry_password_register.delete(0, "end")
+    button_register.focus_set()
     segmented_button_callback("Авторизация")
     segemented_button.set("Авторизация")
+    entry_login.delete(0, "end")
+    entry_password.delete(0, "end")
+    entry_login.configure(placeholder_text="Логин")
+    entry_password.configure(placeholder_text="Пароль")
     CTkMessagebox(title="Success", message="Регистрация прошла успешно")
 
 

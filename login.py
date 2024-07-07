@@ -4,7 +4,7 @@ from data.database import db_insert, login_exist, db_check
 from CTkMessagebox import CTkMessagebox
 
 ctk.set_appearance_mode("dark")
-ctk.set_default_color_theme("dark-blue")
+ctk.set_default_color_theme("green")
 
 app = ctk.CTk()
 app.geometry("320x250+700+350")
